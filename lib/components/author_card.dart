@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/main.dart';
-import 'fooderlich_theme.dart';
+import '../appDataProvider.dart';
+import '../fooderlich_theme.dart';
 import 'circle_image.dart';
 
 class AuthorCard extends StatefulWidget {
@@ -62,7 +62,7 @@ class _AuthorCardState extends State<AuthorCard> {
             color: Colors.red[400],
             onPressed: () {
               setState(() {
-                appDataProvider.appData.changeIsFavorited();
+                appDataProvider.appData.changeFavorite();
                 // print(appDataProvider.appData.isFavorited);
               });
             },
