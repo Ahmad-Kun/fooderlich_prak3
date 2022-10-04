@@ -1,31 +1,48 @@
 import 'package:flutter/material.dart';
-import 'card1.dart';
-import 'card2.dart';
-import 'card3.dart';
+import 'models/explore_recipe.dart';
+import 'components/components.dart';
+import 'screens/explore_screen.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
   @override
+  // ignore: library_private_types_in_public_api
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
+
   static List<Widget> pages = <Widget>[
-    const Card1(),
-    const Card2(),
-    const Card3(),
-    Container(
-      color: Colors.red,
-    ),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.blue,
-    ),
+    ExploreScreen(),
+    Card2(
+        recipe: ExploreRecipe(
+            authorName: 'Mike Katz',
+            role: 'Smoothie Connoisseur',
+            profileImage: 'assets/profile_pics/person_katz.jpeg',
+            title: 'Recipe',
+            subtitle: 'Smoothies',
+            backgroundImage: 'assets/magazine_pics/mag2.png')),
+    Card3(
+        recipe: ExploreRecipe(
+            title: 'Vegan Trends',
+            tags: [
+              'Healthy',
+              'Vegan',
+              'Carrots',
+              'Greens',
+              'Wheat',
+              'Pescetarian',
+              'Mint',
+              'Lemongrass',
+              'Salad',
+              'Water'
+            ],
+            backgroundImage: 'assets/magazine_pics/mag3.png')),
   ];
-  
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -40,22 +57,38 @@ class _HomeState extends State<Home> {
           'Fooderlich',
           style: Theme.of(context).textTheme.headline6,
         ),
+        actions: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: IconButton(
+                  icon: const Icon(Icons.sunny),
+                  onPressed: () {
+                    currentTheme.switchTheme();
+                  },
+                ),
+              ),
+            ],
+          )
+        ],
       ),
       body: pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
+        selectedItemColor: Colors.amber,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        items: <BottomNavigationBarItem>[
-          const BottomNavigationBarItem(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
-            label: 'Card',
+            label: 'Card1',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
             label: 'Card2',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
             label: 'Card3',
           ),
