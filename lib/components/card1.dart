@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
 import '../fooderlich_theme.dart';
 import '../models/models.dart';
@@ -5,12 +7,6 @@ import '../models/models.dart';
 class Card1 extends StatelessWidget {
   final ExploreRecipe recipe;
   const Card1({Key? key, required this.recipe}) : super(key: key);
-
-  final String category = 'Editor\'s Choice';
-  final String title = 'The Art of Dough';
-  final String description = 'Learn to make the perfect bread';
-  final String chef = 'Rifan Setiadi';
-
   @override
   Widget build(BuildContext context) {
     return Center(

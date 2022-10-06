@@ -1,5 +1,7 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
-import '../appDataProvider.dart';
+import 'package:fooderlich/main.dart';
 import '../fooderlich_theme.dart';
 import 'circle_image.dart';
 
@@ -62,7 +64,7 @@ class _AuthorCardState extends State<AuthorCard> {
             color: Colors.red[400],
             onPressed: () {
               setState(() {
-                appDataProvider.appData.changeFavorite();
+                appDataProvider.appData.changeIsFavorited();
                 // print(appDataProvider.appData.isFavorited);
               });
             },
