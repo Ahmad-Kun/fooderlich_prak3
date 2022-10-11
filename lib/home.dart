@@ -4,6 +4,7 @@ import 'models/explore_recipe.dart';
 import 'components/components.dart';
 import 'screens/explore_screen.dart';
 import 'screens/recipes_screen.dart';
+import 'screens/grocery_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -47,6 +48,7 @@ class _HomeState extends State<Home> {
               'Water'
             ],
             backgroundImage: 'assets/magazine_pics/mag3.png')),
+    const GroceryScreen(),
   ];
   void _onItemTapped(int index) {
     setState(() {
