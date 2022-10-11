@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'config.dart';
-import 'models/explore_recipe.dart';
-import 'components/components.dart';
 import 'screens/explore_screen.dart';
 import 'screens/recipes_screen.dart';
 import 'screens/grocery_screen.dart';
