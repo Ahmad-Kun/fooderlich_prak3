@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppDataProvider  extends InheritedWidget {
   final AppData appData;
+  @override
+  // ignore: overridden_fields
   final Widget child;
 
   const AppDataProvider({
